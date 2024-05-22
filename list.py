@@ -14,6 +14,7 @@ def Get_list(CMD):
         print("Test........returns 'hi' made for testing")
         print("help........You know... this page")
         print("dineout.....To get programs from the dineout repo")
+        print("run.........To run programs installed from DineOut or others")
         print("Clear.......To clear your screen")
         print("exit........to exit CMDine")
         Core()
@@ -25,10 +26,11 @@ def Get_list(CMD):
     if CMD == "dineout":
         os.system("clear")
         print("What prog?")
-        print("1. Calc")
+        print("1. calc")
+        print("2. weatherplug")
         PROG = input()
         
-        if PROG == "Calc":
+        if PROG == "calc":
             os.system("wget acesavagejr.github.io/DineOut/Calc.py")
             os.system("clear")
             Core()
@@ -48,3 +50,13 @@ def Get_list(CMD):
         if CMD == "weatherplug":
             from WPLG import WP
             WP()
+        
+    if CMD == "rm":
+        PROG = input("Which program? ")
+        if PROG == "calc":
+            os.system("rm Calc.py")
+            Core()
+            
+        if PROG == "weatherplug":
+            os.system("rm WPLG.py")
+            Core()
